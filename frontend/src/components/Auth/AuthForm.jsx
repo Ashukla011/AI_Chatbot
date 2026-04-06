@@ -9,7 +9,7 @@ const AuthForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = isLogin ? 'http://localhost:5001/api/user/login' : 'http://localhost:5001/api/user/register';
+    const endpoint = isLogin ? `${import.meta.env.BASE_URL}/api/user/login` : `${import.meta.env.BASE_URL}/api/user/register`;
     
     try {
       const res = await fetch(endpoint, {

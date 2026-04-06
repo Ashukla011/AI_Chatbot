@@ -18,7 +18,7 @@ const ChatBox = () => {
 
   const fetchHistory = async () => {
     try {
-      const res = await fetch('http://localhost:5001/api/chat/history', {
+      const res = await fetch(`${import.meta.env.BASE_URL}/api/chat/history`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await res.json();
@@ -38,7 +38,7 @@ const ChatBox = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:5001/api/chat', {
+      const res = await fetch(`${import.meta.env.BASE_URL}/api/chat`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
